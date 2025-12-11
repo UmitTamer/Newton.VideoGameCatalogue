@@ -1,0 +1,5 @@
+@if (game() === null) {
+<p>Loading game...</p>
+} @else {
+<app-game-form [game]="game()!" header="Edit Game" buttonText="Save Changes" (submitForm)="onSubmit($event)" />
+}

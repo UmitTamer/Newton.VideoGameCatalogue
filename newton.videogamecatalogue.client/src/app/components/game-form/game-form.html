@@ -1,0 +1,66 @@
+<div class="container ms-3">
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+
+        <button class="btn btn-sm btn-outline-primary mb-2 mt-3" [routerLink]="['/']">◀ Back to Browse</button>
+        <h2 class="mb-3">{{ header }}</h2>
+
+        <!-- Title -->
+        <div class="mb-2">
+            <label for="inputTitle" class="form-label">Title</label>
+            <input id="inputTitle" name="title" class="form-control" [(ngModel)]="model.title" required minlength="1"
+                maxlength="100" #title="ngModel" aria-describedby="titleAlert" placeholder="Game Title" />
+
+            @if (title.invalid && title.touched) {
+            <small id="titleAlert" class="form-text text-danger fw-lighter">
+                Title is required and must be less than 100 characters.
+            </small>
+            }
+        </div>
+
+        <!-- Genre -->
+        <div class="mb-2">
+            <label for="inputGenre" class="form-label">Genre</label>
+            <input id="inputGenre" name="genre" class="form-control" [(ngModel)]="model.genre" required minlength="1"
+                maxlength="100" #genre="ngModel" aria-describedby="genreAlert" placeholder="Genre" />
+
+            @if (genre.invalid && genre.touched) {
+            <small id="genreAlert" class="form-text text-danger fw-lighter">
+                Genre is required and must be less than 100 characters.
+            </small>
+            }
+        </div>
+
+        <!-- Release Year -->
+        <div class="mb-2">
+            <label for="inputRelease" class="form-label">Release Year</label>
+            <input id="inputRelease" type="number" name="releaseYear" class="form-control"
+                [(ngModel)]="model.releaseYear" required min="1950" max="2100" #year="ngModel"
+                aria-describedby="releaseAlert" />
+
+            @if (year.invalid && year.touched) {
+            <small id="releaseAlert" class="form-text text-danger fw-lighter">
+                Year must be between 1950 and 2100.
+            </small>
+            }
+        </div>
+
+        <!-- Rating -->
+        <div class="mb-2">
+            <label for="inputRating" class="form-label">Rating</label>
+            <input id="inputRating" type="number" name="rating" class="form-control" [(ngModel)]="model.rating" required
+                min="0" max="10" step="0.1" #rating="ngModel" aria-describedby="ratingAlert" />
+
+            @if (rating.invalid && rating.touched) {
+            <small id="ratingAlert" class="form-text text-danger fw-lighter">
+                Rating must be between 0 and 10.
+            </small>
+            }
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" class="btn btn-primary" [disabled]="f.invalid || f.pristine">
+            {{ buttonText }}
+        </button>
+
+    </form>
+</div>
