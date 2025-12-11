@@ -9,7 +9,8 @@ import { catchError } from 'rxjs';
   selector: 'app-games-list',
   standalone: true,
   imports: [CommonModule, RouterModule],
-  templateUrl: './games-list.html'
+  templateUrl: './games-list.html',
+  styleUrl: './games-list.css'
 })
 export class GamesList implements OnInit {
   games = signal<Game[]>([]);

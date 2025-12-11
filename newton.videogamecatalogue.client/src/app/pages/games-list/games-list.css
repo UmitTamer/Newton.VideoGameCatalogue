@@ -1,0 +1,4 @@
+.game-item:hover {
+    background-color: #86acd1;
+    cursor: pointer;
+}

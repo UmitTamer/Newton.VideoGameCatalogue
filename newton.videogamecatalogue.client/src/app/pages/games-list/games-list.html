@@ -1,8 +1,7 @@
-<div class="container mt-4">
-    <!-- Header and Add New Button -->
-    <div class="d-flex justify-content-between align-items-center mb-3">
-        <h2 class="mb-0">Browse Games</h2>
-        <button class="btn btn-primary" routerLink="/games/create">Add New Game</button>
+<div class="container">
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold">Games</h2>
     </div>
 
     <!-- Games List -->
@@ -10,11 +9,11 @@
         <ul class="list-group list-group-flush">
             @if (games().length === 0) {
             <li class="list-group-item">
-                <p class="mb-0">No games available. Click "Add New Game" to create one.</p>
+                <p class="mb-0">No games available. Navigate "Add New Game" to create one.</p>
             </li>
             } @else {
             @for (game of games(); track game.id) {
-            <li class="list-group-item d-flex justify-content-between align-items-center py-3">
+            <li class="list-group-item py-3 px-4 d-flex justify-content-between align-items-center game-item">
                 <div>
                     <!-- Game Info -->
                     <h5 class="mb-1">{{ game.title }}</h5>
