@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Newton.VideoGameCatalogue.NTests/Newton.VideoGameCatalogue.NTests.csproj" Id="1706e179-a42b-40f4-9cd9-a7e3b26e1411" />
+  <Project Path="Newton.VideoGameCatalogue.Server/Newton.VideoGameCatalogue.Server.csproj" />
+</Solution>
